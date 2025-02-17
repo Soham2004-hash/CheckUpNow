@@ -24,6 +24,10 @@ app.add_middleware(
 
 task_models = {}  # Cache for loaded models
 
+@app.get("/")
+def home():
+    return {"message": "FastAPI is running on Render"}
+
 @app.post("/predict")
 async def predict(file: UploadFile = File(...), task: str = Form(...), classes: int = Form(...)):
     # classes = 2
@@ -49,4 +53,6 @@ async def predict(file: UploadFile = File(...), task: str = Form(...), classes: 
         return JSONResponse(status_code=500, content={"error": str(e)})
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # uvicorn.run(app, host="0.0.0.0", port=10000)
+    port = int(os.getenv("PORT", 10000))  # ✅ Use the Render-assigned port
+    uvicorn.run(app, host="0.0.0.0", port=port)
