@@ -1,0 +1,393 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Add these styles to your App.css */
+.pulse-button {
+  --color: #3b82f6;
+  --hover: #2563eb;
+  color: var(--color);
+  transition: 0.25s;
+  background: none;
+  border: 2px solid var(--color);
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
+}
+
+.pulse-button:hover,
+.pulse-button:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+  border-color: var(--hover);
+  color: #fff;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+/* Update the pulse-button class to offset-button */
+.offset-button {
+  --color: #3b82f6;
+  --hover: #2563eb;
+  color: var(--color);
+  transition: 0.25s;
+  background: none;
+  border: 2px solid var(--color);
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
+  box-shadow: 
+    0.3em 0.3em 0 0 var(--color),
+    inset 0.3em 0.3em 0 0 var(--color);
+}
+
+.offset-button:hover,
+.offset-button:focus {
+  box-shadow: 
+    0 0 0 0 var(--hover),
+    inset 6em 3.5em 0 0 var(--hover);
+  color: #fff;
+}
+
+/* Add these new button styles */
+.fill-button {
+  --color: #3b82f6;
+  --hover: #2563eb;
+  color: var(--color);
+  transition: 0.25s;
+  background: none;
+  border: 2px solid var(--color);
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
+}
+
+.fill-button:hover,
+.fill-button:focus {
+  border-color: var(--hover);
+  color: #fff;
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+.slide-button {
+  --color: #3b82f6;
+  --hover: #2563eb;
+  color: var(--color);
+  transition: 0.25s;
+  background: none;
+  border: 2px solid var(--color);
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-button:hover,
+.slide-button:focus {
+  color: #fff;
+}
+
+.slide-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--hover);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.slide-button:hover::before,
+.slide-button:focus::before {
+  transform: translateX(0);
+}
+
+/* Add these new colorful button styles */
+.rainbow-button {
+  --color: #3b82f6;
+  --hover: #2563eb;
+  color: var(--color);
+  transition: all 0.3s ease;
+  background: none;
+  border: 2px solid var(--color);
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.rainbow-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rainbow-button:hover::before {
+  opacity: 1;
+  animation: glowing 20s linear infinite;
+}
+
+.rainbow-button:hover {
+  color: #fff;
+  border-color: transparent;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.neon-button {
+  --color: #3b82f6;
+  --hover: #2563eb;
+  color: var(--color);
+  transition: all 0.3s ease;
+  background: none;
+  border: 2px solid var(--color);
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.neon-button:hover {
+  background: linear-gradient(45deg, #00ff87, #60efff);
+  color: #000;
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(0, 255, 135, 0.5),
+              0 0 40px rgba(96, 239, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.neon-button:hover::before {
+  transform: translateX(100%);
+}
+
+/* Add these new 3D flip button styles */
+.flip-button {
+  position: relative;
+  border: none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  perspective: 230px;
+  background: transparent;
+  margin: 0.5em;
+}
+
+.flip-button span {
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all .3s;
+  color: white;
+  font-weight: 600;
+}
+
+.flip-button span:nth-child(1) {
+  box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+  transform: rotateX(90deg);
+  transform-origin: 50% 50% -20px;
+}
+
+.flip-button span:nth-child(2) {
+  transform: rotateX(0deg);
+  transform-origin: 50% 50% -20px;
+}
+
+.flip-button:hover span:nth-child(1) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+  transform: rotateX(0deg);
+}
+
+.flip-button:hover span:nth-child(2) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+  color: transparent;
+  transform: rotateX(-90deg);
+}
+
+/* Custom colors for Home button */
+.home-flip span {
+  background: linear-gradient(0deg, #3b82f6 0%, #2563eb 100%);
+}
+
+/* Custom colors for About button */
+.about-flip span {
+  background: linear-gradient(0deg, #10b981 0%, #059669 100%);
+}
+
+/* Add this simple button style */
+.simple-button {
+  color: white;
+  background: linear-gradient(0deg, #3b82f6 0%, #2563eb 100%);
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin: 0.5em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.simple-button:hover {
+  opacity: 0.9;
+}
+
+/* Custom colors for About button */
+.about-simple {
+  background: linear-gradient(0deg, #10b981 0%, #059669 100%);
+}
+
+/* Add these new colorful button styles */
+.colorful-button {
+  color: white;
+  background: #000000;
+  border: 2px solid #3b82f6;
+  padding: 0.8em 2em;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.colorful-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #3b82f6, #2563eb, #1d4ed8);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.colorful-button:hover::before {
+  opacity: 1;
+}
+
+.colorful-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+  border-color: transparent;
+}
+
+/* Custom colors for About button */
+.about-colorful {
+  border-color: #10b981;
+}
+
+.about-colorful::before {
+  background: linear-gradient(45deg, #10b981, #059669, #047857);
+}
+
+.about-colorful:hover {
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
